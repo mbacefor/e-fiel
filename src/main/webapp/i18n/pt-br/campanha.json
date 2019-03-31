@@ -1,0 +1,29 @@
+{
+    "efielApp": {
+        "campanha": {
+            "home": {
+                "title": "Campanhas",
+                "createLabel": "Criar novo Campanha",
+                "createOrEditLabel": "Criar ou editar Campanha",
+                "search": "Pesquisar por Campanha"
+            },
+            "created": "Um novo Campanha foi criado com o identificador {{ param }}",
+            "updated": "Um Campanha foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Campanha foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Campanha {{ id }}?"
+            },
+            "detail": {
+                "title": "Campanha"
+            },
+            "nome": "Nome",
+            "logo": "Logo",
+            "premio": "Premio",
+            "regras": "Regras",
+            "expira": "Expira",
+            "numeroSelos": "Numero Selos",
+            "cartoes": "Cartoes",
+            "empresa": "Empresa"
+        }
+    }
+}

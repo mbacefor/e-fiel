@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="campanha">
+            <h2><span jhiTranslate="efielApp.campanha.detail.title">Campanha</span> {{campanha.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="efielApp.campanha.nome">Nome</span></dt>
+                <dd>
+                    <span>{{campanha.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="efielApp.campanha.logo">Logo</span></dt>
+                <dd>
+                    <div *ngIf="campanha.logo">
+                        <a (click)="openFile(campanha.logoContentType, campanha.logo)">
+                            <img [src]="'data:' + campanha.logoContentType + ';base64,' + campanha.logo" style="max-width: 100%;" alt="campanha image"/>
+                        </a>
+                        {{campanha.logoContentType}}, {{byteSize(campanha.logo)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="efielApp.campanha.premio">Premio</span></dt>
+                <dd>
+                    <span>{{campanha.premio}}</span>
+                </dd>
+                <dt><span jhiTranslate="efielApp.campanha.regras">Regras</span></dt>
+                <dd>
+                    <span>{{campanha.regras}}</span>
+                </dd>
+                <dt><span jhiTranslate="efielApp.campanha.expira">Expira</span></dt>
+                <dd>
+                    <span>{{campanha.expira}}</span>
+                </dd>
+                <dt><span jhiTranslate="efielApp.campanha.numeroSelos">Numero Selos</span></dt>
+                <dd>
+                    <span>{{campanha.numeroSelos}}</span>
+                </dd>
+                <dt><span jhiTranslate="efielApp.campanha.empresa">Empresa</span></dt>
+                <dd>
+                    <div *ngIf="campanha.empresa">
+                        <a [routerLink]="['/empresa', campanha.empresa?.id, 'view']">{{campanha.empresa?.nome}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/campanha', campanha.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+{
+    "name": "SeloCartao",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength",
+                "minlength"
+            ],
+            "fieldValidateRulesMaxlength": 300,
+            "fieldValidateRulesMinlength": 50
+        },
+        {
+            "fieldName": "valor",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required",
+                "max"
+            ],
+            "fieldValidateRulesMax": 0
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "TipoSelo",
+            "fieldValues": "COMPRA,PROMOCAO,OUTRO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "cartaoFidelidade",
+            "otherEntityName": "cartaoFidelidade",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190331024558",
+    "entityTableName": "selo_cartao",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

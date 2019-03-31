@@ -1,0 +1,25 @@
+{
+    "efielApp": {
+        "seloCartao": {
+            "home": {
+                "title": "Selo Cartaos",
+                "createLabel": "Criar novo Selo Cartao",
+                "createOrEditLabel": "Criar ou editar Selo Cartao",
+                "search": "Pesquisar por Selo Cartao"
+            },
+            "created": "Um novo Selo Cartao foi criado com o identificador {{ param }}",
+            "updated": "Um Selo Cartao foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Selo Cartao foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Selo Cartao {{ id }}?"
+            },
+            "detail": {
+                "title": "Selo Cartao"
+            },
+            "descricao": "Descricao",
+            "valor": "Valor",
+            "tipo": "Tipo",
+            "cartaoFidelidade": "Cartao Fidelidade"
+        }
+    }
+}

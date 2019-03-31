@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="seloCartao">
+            <h2><span jhiTranslate="efielApp.seloCartao.detail.title">Selo Cartao</span> {{seloCartao.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="efielApp.seloCartao.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{seloCartao.descricao}}</span>
+                </dd>
+                <dt><span jhiTranslate="efielApp.seloCartao.valor">Valor</span></dt>
+                <dd>
+                    <span>{{seloCartao.valor}}</span>
+                </dd>
+                <dt><span jhiTranslate="efielApp.seloCartao.tipo">Tipo</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'efielApp.TipoSelo.' + seloCartao.tipo}}">{{seloCartao.tipo}}</span>
+                </dd>
+                <dt><span jhiTranslate="efielApp.seloCartao.cartaoFidelidade">Cartao Fidelidade</span></dt>
+                <dd>
+                    <div *ngIf="seloCartao.cartaoFidelidade">
+                        <a [routerLink]="['/cartao-fidelidade', seloCartao.cartaoFidelidade?.id, 'view']">{{seloCartao.cartaoFidelidade?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/selo-cartao', seloCartao.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

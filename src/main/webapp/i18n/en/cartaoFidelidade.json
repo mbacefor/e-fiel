@@ -1,0 +1,26 @@
+{
+    "efielApp": {
+        "cartaoFidelidade": {
+            "home": {
+                "title": "Cartao Fidelidades",
+                "createLabel": "Create a new Cartao Fidelidade",
+                "createOrEditLabel": "Create or edit a Cartao Fidelidade",
+                "search": "Search for Cartao Fidelidade"
+            },
+            "created": "A new Cartao Fidelidade is created with identifier {{ param }}",
+            "updated": "A Cartao Fidelidade is updated with identifier {{ param }}",
+            "deleted": "A Cartao Fidelidade is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Cartao Fidelidade {{ id }}?"
+            },
+            "detail": {
+                "title": "Cartao Fidelidade"
+            },
+            "dataCriacao": "Data Criacao",
+            "dataPremio": "Data Premio",
+            "campanha": "Campanha",
+            "selos": "Selos",
+            "dono": "Dono"
+        }
+    }
+}

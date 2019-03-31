@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cartaoFidelidade">
+            <h2><span jhiTranslate="efielApp.cartaoFidelidade.detail.title">Cartao Fidelidade</span> {{cartaoFidelidade.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="efielApp.cartaoFidelidade.dataCriacao">Data Criacao</span></dt>
+                <dd>
+                    <span>{{cartaoFidelidade.dataCriacao}}</span>
+                </dd>
+                <dt><span jhiTranslate="efielApp.cartaoFidelidade.dataPremio">Data Premio</span></dt>
+                <dd>
+                    <span>{{cartaoFidelidade.dataPremio}}</span>
+                </dd>
+                <dt><span jhiTranslate="efielApp.cartaoFidelidade.campanha">Campanha</span></dt>
+                <dd>
+                    <div *ngIf="cartaoFidelidade.campanha">
+                        <a [routerLink]="['/campanha', cartaoFidelidade.campanha?.id, 'view']">{{cartaoFidelidade.campanha?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="efielApp.cartaoFidelidade.dono">Dono</span></dt>
+                <dd>
+                    {{cartaoFidelidade.dono?.id}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cartao-fidelidade', cartaoFidelidade.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

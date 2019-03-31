@@ -41,6 +41,16 @@ public class CacheConfiguration {
             cm.createCache(br.com.efiel.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.efiel.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.efiel.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(br.com.efiel.domain.Empresa.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.efiel.domain.Empresa.class.getName() + ".campanhas", jcacheConfiguration);
+            cm.createCache(br.com.efiel.domain.Empresa.class.getName() + ".cartegorias", jcacheConfiguration);
+            cm.createCache(br.com.efiel.domain.Campanha.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.efiel.domain.Campanha.class.getName() + ".cartoes", jcacheConfiguration);
+            cm.createCache(br.com.efiel.domain.CartaoFidelidade.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.efiel.domain.CartaoFidelidade.class.getName() + ".selos", jcacheConfiguration);
+            cm.createCache(br.com.efiel.domain.SeloCartao.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.efiel.domain.Categoria.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.efiel.domain.Categoria.class.getName() + ".empresas", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

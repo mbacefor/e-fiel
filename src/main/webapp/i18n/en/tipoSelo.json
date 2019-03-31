@@ -1,0 +1,10 @@
+{
+    "efielApp": {
+        "TipoSelo": {
+            "null": "",
+            "COMPRA": "COMPRA",
+            "PROMOCAO": "PROMOCAO",
+            "OUTRO": "OUTRO"
+        }
+    }
+}

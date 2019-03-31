@@ -1,0 +1,46 @@
+{
+    "name": "CartaoFidelidade",
+    "fields": [
+        {
+            "fieldName": "dataCriacao",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dataPremio",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "campanha",
+            "otherEntityName": "campanha",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "seloCartao",
+            "otherEntityRelationshipName": "cartaoFidelidade",
+            "relationshipName": "selos"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "cartaoFidelidade",
+            "relationshipName": "dono",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190331024557",
+    "entityTableName": "cartao_fidelidade",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
