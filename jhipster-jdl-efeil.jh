@@ -1,0 +1,68 @@
+
+/** Empresa que tem campanhas*/
+
+entity Empresa {
+	id Integer,
+    nome String required maxlength(90) minlength(10),
+    cnpj String maxlength(14) unique,
+    endereco String required maxlength(200) minlength(10),
+    fone String maxlength(14)
+}
+
+entity Campanha {
+	id Integer,
+    logo ImageBlob,
+    premio String required maxlength(300),
+	regras String required maxlength(300),
+	expira LocalDate required,
+    numeroSelos Integer required max(0)
+}
+
+entity CartaoFidelidade {
+	id Integer,
+    dataCriacao LocalDate required,
+    dataPremio LocalDate 
+}
+
+entity SeloCartao{
+    id Integer,
+  	descricao String required maxlength(300) minlength(50),
+    valor Double required max(0),
+    tipo TipoSelo required
+}
+
+enum TipoSelo {
+    COMPRA, PROMOCAO, OUTRO
+}
+
+entity Categoria {
+	id Integer,
+    descricao String maxlength(200) minlength(10) unique,
+    ativo Boolean
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	CartaoFidelidade{selos} to SeloCartao,
+	Campanha{cartoes} to CartaoFidelidade,
+    Empresa{campanhas} to Campanha,
+    Categoria{empresas} to Empresa
+}
+
+relationship ManyToOne {
+	Empresa{criador} to User ,
+    CartaoFidelidade{Dono} to User
+}
+
+// Set pagination options
+paginate CartaoFidelidade, Empresa with infinite-scroll
+paginate Campanha with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Empresa
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
