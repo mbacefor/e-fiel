@@ -23,6 +23,14 @@ import { RouterModule } from '@angular/router';
             {
                 path: 'categoria',
                 loadChildren: './categoria/categoria.module#EfielCategoriaModule'
+            },
+            {
+                path: 'campanha',
+                loadChildren: './campanha/campanha.module#EfielCampanhaModule'
+            },
+            {
+                path: 'selo-cartao',
+                loadChildren: './selo-cartao/selo-cartao.module#EfielSeloCartaoModule'
             }
             /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
         ])

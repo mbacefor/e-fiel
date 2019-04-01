@@ -68,8 +68,8 @@ public class CampanhaResourceIntTest {
     private static final LocalDate DEFAULT_EXPIRA = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_EXPIRA = LocalDate.now(ZoneId.systemDefault());
 
-    private static final Integer DEFAULT_NUMERO_SELOS = 0;
-    private static final Integer UPDATED_NUMERO_SELOS = -1;
+    private static final Integer DEFAULT_NUMERO_SELOS = 1;
+    private static final Integer UPDATED_NUMERO_SELOS = 2;
 
     @Autowired
     private CampanhaRepository campanhaRepository;

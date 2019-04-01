@@ -49,8 +49,8 @@ public class SeloCartaoResourceIntTest {
     private static final String DEFAULT_DESCRICAO = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     private static final String UPDATED_DESCRICAO = "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
 
-    private static final Double DEFAULT_VALOR = 0D;
-    private static final Double UPDATED_VALOR = -1D;
+    private static final Double DEFAULT_VALOR = 1D;
+    private static final Double UPDATED_VALOR = 2D;
 
     private static final TipoSelo DEFAULT_TIPO = TipoSelo.COMPRA;
     private static final TipoSelo UPDATED_TIPO = TipoSelo.PROMOCAO;

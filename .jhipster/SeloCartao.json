@@ -17,9 +17,9 @@
             "fieldType": "Double",
             "fieldValidateRules": [
                 "required",
-                "max"
+                "min"
             ],
-            "fieldValidateRulesMax": 0
+            "fieldValidateRulesMin": 1
         },
         {
             "fieldName": "tipo",

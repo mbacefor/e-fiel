@@ -51,9 +51,9 @@
             "fieldType": "Integer",
             "fieldValidateRules": [
                 "required",
-                "max"
+                "min"
             ],
-            "fieldValidateRulesMax": 0
+            "fieldValidateRulesMin": 1
         }
     ],
     "relationships": [

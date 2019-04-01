@@ -36,7 +36,7 @@ public class SeloCartao implements Serializable {
     private String descricao;
 
     @NotNull
-    @DecimalMax(value = "0")
+    @DecimalMin(value = "1")
     @Column(name = "valor", nullable = false)
     private Double valor;
 

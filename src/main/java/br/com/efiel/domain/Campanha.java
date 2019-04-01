@@ -59,7 +59,7 @@ public class Campanha implements Serializable {
     private LocalDate expira;
 
     @NotNull
-    @Max(value = 0)
+    @Min(value = 1)
     @Column(name = "numero_selos", nullable = false)
     private Integer numeroSelos;
 

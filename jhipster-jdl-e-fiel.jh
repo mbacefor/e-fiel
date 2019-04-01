@@ -16,7 +16,7 @@ entity Campanha {
     premio String required maxlength(300) minlength(10),
 	regras String required maxlength(300) minlength(10),
 	expira LocalDate required,
-    numeroSelos Integer required max(0)
+    numeroSelos Integer required min(1)
 }
 
 entity CartaoFidelidade {
@@ -28,7 +28,7 @@ entity CartaoFidelidade {
 entity SeloCartao{
     id Integer,
   	descricao String required maxlength(300) minlength(50),
-    valor Double required max(0),
+    valor Double required min(1),
     tipo TipoSelo required
 }
 
