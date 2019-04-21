@@ -6,12 +6,12 @@
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!empresa.id">
                     <label for="id" jhiTranslate="global.field.id">ID</label>
-                    <input type="text" class="form-control" id="id" name="id"
+                    <input type="text" class="contact_input form-control" id="id" name="id"
                         [(ngModel)]="empresa.id" readonly />
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.empresa.nome" for="field_nome">Nome</label>
-                    <input type="text" class="form-control" name="nome" id="field_nome"
+                    <input type="text" class="contact_input form-control" name="nome" id="field_nome"
                         [(ngModel)]="empresa.nome" required minlength="10" maxlength="90"/>
                     <div [hidden]="!(editForm.controls.nome?.dirty && editForm.controls.nome?.invalid)">
                         <small class="form-text text-danger"
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.empresa.cnpj" for="field_cnpj">Cnpj</label>
-                    <input type="text" class="form-control" name="cnpj" id="field_cnpj"
+                    <input type="text" class="contact_input form-control" name="cnpj" id="field_cnpj"
                         [(ngModel)]="empresa.cnpj" maxlength="14"/>
                     <div [hidden]="!(editForm.controls.cnpj?.dirty && editForm.controls.cnpj?.invalid)">
                         <small class="form-text text-danger"
@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.empresa.endereco" for="field_endereco">Endereco</label>
-                    <input type="text" class="form-control" name="endereco" id="field_endereco"
+                    <input type="text" class="contact_input form-control" name="endereco" id="field_endereco"
                         [(ngModel)]="empresa.endereco" required minlength="10" maxlength="200"/>
                     <div [hidden]="!(editForm.controls.endereco?.dirty && editForm.controls.endereco?.invalid)">
                         <small class="form-text text-danger"
@@ -60,7 +60,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.empresa.fone" for="field_fone">Fone</label>
-                    <input type="text" class="form-control" name="fone" id="field_fone"
+                    <input type="text" class="contact_input form-control" name="fone" id="field_fone"
                         [(ngModel)]="empresa.fone" maxlength="14"/>
                     <div [hidden]="!(editForm.controls.fone?.dirty && editForm.controls.fone?.invalid)">
                         <small class="form-text text-danger"
@@ -79,10 +79,10 @@
                 </div>
             </div>
             <div>
-                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                <button type="button" id="cancel-save" class="contact_button btn btn-secondary"  (click)="previousState()">
                     <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
                 </button>
-                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="contact_button btn btn-primary">
                     <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
                 </button>
             </div>
