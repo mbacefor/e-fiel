@@ -34,7 +34,7 @@
         "enableTranslation": true,
         "nativeLanguage": "pt-br",
         "languages": ["pt-br", "en"],
-        "herokuAppName": "efiel",
+        "herokuAppName": "polar-escarpment-81124",
         "herokuDeployType": "git"
     }
 }
