@@ -33,6 +33,8 @@
         "otherModules": [],
         "enableTranslation": true,
         "nativeLanguage": "pt-br",
-        "languages": ["pt-br", "en"]
+        "languages": ["pt-br", "en"],
+        "herokuAppName": "efiel",
+        "herokuDeployType": "git"
     }
 }
