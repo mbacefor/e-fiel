@@ -72,10 +72,7 @@
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.empresa.criador" for="field_criador">Criador</label>
-                    <select class="form-control" id="field_criador" name="criador" [(ngModel)]="empresa.criador" >
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="userOption.id === empresa.criador?.id ? empresa.criador : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
-                    </select>
+                    <h3>{{empresa.criador.login}}</h3>
                 </div>
             </div>
             <div>

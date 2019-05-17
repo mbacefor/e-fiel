@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { JhiAlertService } from 'ng-jhipster';
 import { IEmpresa } from 'app/shared/model/empresa.model';
 import { EmpresaService } from './empresa.service';
-import { IUser, UserService } from 'app/core';
+import { IUser, UserService, AccountService } from 'app/core';
 import { ICategoria } from 'app/shared/model/categoria.model';
 import { CategoriaService } from 'app/entities/categoria';
 
@@ -19,11 +19,13 @@ export class EmpresaUpdateComponent implements OnInit {
     isSaving: boolean;
 
     users: IUser[];
+    account: Account;
 
     categorias: ICategoria[];
 
     constructor(
         protected jhiAlertService: JhiAlertService,
+        private accountService: AccountService,
         protected empresaService: EmpresaService,
         protected userService: UserService,
         protected categoriaService: CategoriaService,
@@ -34,6 +36,10 @@ export class EmpresaUpdateComponent implements OnInit {
         this.isSaving = false;
         this.activatedRoute.data.subscribe(({ empresa }) => {
             this.empresa = empresa;
+            this.accountService.identity().then((account: Account) => {
+                this.account = account;
+                this.empresa.criador = this.account;
+            });
         });
         this.userService
             .query()
