@@ -1,7 +1,7 @@
 <div>
     <h2 id="page-heading">
         <span jhiTranslate="efielApp.cartaoFidelidade.home.title">Cartao Fidelidades</span>
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cartao-fidelidade" [routerLink]="['/cartao-fidelidade/new']">
+        <button id="jh-create-entity" class="button btn btn-primary float-right jh-create-entity create-cartao-fidelidade" [routerLink]="['/cartao-fidelidade/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
             <span class="hidden-sm-down"  jhiTranslate="efielApp.cartaoFidelidade.home.createLabel">
             Create new Cartao Fidelidade
@@ -54,13 +54,13 @@
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
                                 [routerLink]="['/cartao-fidelidade', cartaoFidelidade.id, 'view' ]"
-                                class="btn btn-info btn-sm">
+                                class="search_form_button btn btn-info btn-sm">
                             <fa-icon [icon]="'eye'"></fa-icon>
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/cartao-fidelidade', cartaoFidelidade.id, 'edit']"
-                                class="btn btn-primary btn-sm">
+                                class="search_form_button btn btn-primary btn-sm">
                             <fa-icon [icon]="'pencil-alt'"></fa-icon>
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
@@ -68,7 +68,7 @@
                                 [routerLink]="['/', 'cartao-fidelidade', { outlets: { popup: cartaoFidelidade.id + '/delete'} }]"
                                 replaceUrl="true"
                                 queryParamsHandling="merge"
-                                class="btn btn-danger btn-sm">
+                                class="search_form_button btn btn-danger btn-sm">
                             <fa-icon [icon]="'times'"></fa-icon>
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
                         </button>
