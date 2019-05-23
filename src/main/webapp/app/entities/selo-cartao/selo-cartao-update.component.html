@@ -6,12 +6,12 @@
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!seloCartao.id">
                     <label for="id" jhiTranslate="global.field.id">ID</label>
-                    <input type="text" class="form-control" id="id" name="id"
+                    <input type="text" class="contact_input form-control" id="id" name="id"
                         [(ngModel)]="seloCartao.id" readonly />
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.seloCartao.descricao" for="field_descricao">Descricao</label>
-                    <input type="text" class="form-control" name="descricao" id="field_descricao"
+                    <input type="text" class="contact_input form-control" name="descricao" id="field_descricao"
                         [(ngModel)]="seloCartao.descricao" required minlength="50" maxlength="300"/>
                     <div [hidden]="!(editForm.controls.descricao?.dirty && editForm.controls.descricao?.invalid)">
                         <small class="form-text text-danger"
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.seloCartao.valor" for="field_valor">Valor</label>
-                    <input type="number" class="form-control" name="valor" id="field_valor"
+                    <input type="number" class="contact_input form-control" name="valor" id="field_valor"
                         [(ngModel)]="seloCartao.valor" required min="1" jhiMin="1"/>
                     <div [hidden]="!(editForm.controls.valor?.dirty && editForm.controls.valor?.invalid)">
                         <small class="form-text text-danger"
@@ -49,7 +49,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.seloCartao.tipo" for="field_tipo">Tipo</label>
-                    <select class="form-control" name="tipo" [(ngModel)]="seloCartao.tipo" id="field_tipo"  required>
+                    <select class="contact_input form-control" name="tipo" [(ngModel)]="seloCartao.tipo" id="field_tipo"  required>
                         <option value="COMPRA">{{'efielApp.TipoSelo.COMPRA' | translate}}</option>
                         <option value="PROMOCAO">{{'efielApp.TipoSelo.PROMOCAO' | translate}}</option>
                         <option value="OUTRO">{{'efielApp.TipoSelo.OUTRO' | translate}}</option>
@@ -64,17 +64,17 @@
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.seloCartao.cartaoFidelidade" for="field_cartaoFidelidade">Cartao Fidelidade</label>
-                    <select class="form-control" id="field_cartaoFidelidade" name="cartaoFidelidade" [(ngModel)]="seloCartao.cartaoFidelidade" >
+                    <select class="contact_input form-control" id="field_cartaoFidelidade" name="cartaoFidelidade" [(ngModel)]="seloCartao.cartaoFidelidade" >
                         <option [ngValue]="null"></option>
                         <option [ngValue]="cartaoFidelidadeOption.id === seloCartao.cartaoFidelidade?.id ? seloCartao.cartaoFidelidade : cartaoFidelidadeOption" *ngFor="let cartaoFidelidadeOption of cartaofidelidades; trackBy: trackCartaoFidelidadeById">{{cartaoFidelidadeOption.id}}</option>
                     </select>
                 </div>
             </div>
             <div>
-                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                <button type="button" id="cancel-save" class="search_form_button btn btn-secondary"  (click)="previousState()">
                     <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
                 </button>
-                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="search_form_button btn btn-primary">
                     <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
                 </button>
             </div>
