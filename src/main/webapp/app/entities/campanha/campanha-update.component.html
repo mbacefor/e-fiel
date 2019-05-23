@@ -6,12 +6,12 @@
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!campanha.id">
                     <label for="id" jhiTranslate="global.field.id">ID</label>
-                    <input type="text" class="form-control" id="id" name="id"
+                    <input type="text" class="contact_input form-control" id="id" name="id"
                         [(ngModel)]="campanha.id" readonly />
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.campanha.nome" for="field_nome">Nome</label>
-                    <input type="text" class="form-control" name="nome" id="field_nome"
+                    <input type="text" class="contact_input form-control" name="nome" id="field_nome"
                         [(ngModel)]="campanha.nome" required minlength="10" maxlength="150"/>
                     <div [hidden]="!(editForm.controls.nome?.dirty && editForm.controls.nome?.invalid)">
                         <small class="form-text text-danger"
@@ -47,7 +47,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.campanha.premio" for="field_premio">Premio</label>
-                    <input type="text" class="form-control" name="premio" id="field_premio"
+                    <input type="text" class="contact_input form-control" name="premio" id="field_premio"
                         [(ngModel)]="campanha.premio" required minlength="10" maxlength="300"/>
                     <div [hidden]="!(editForm.controls.premio?.dirty && editForm.controls.premio?.invalid)">
                         <small class="form-text text-danger"
@@ -66,7 +66,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.campanha.regras" for="field_regras">Regras</label>
-                    <input type="text" class="form-control" name="regras" id="field_regras"
+                    <input type="text" class="contact_input form-control" name="regras" id="field_regras"
                         [(ngModel)]="campanha.regras" required minlength="10" maxlength="300"/>
                     <div [hidden]="!(editForm.controls.regras?.dirty && editForm.controls.regras?.invalid)">
                         <small class="form-text text-danger"
@@ -86,7 +86,7 @@
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.campanha.expira" for="field_expira">Expira</label>
                     <div class="input-group">
-                        <input id="field_expira" type="text" class="form-control" name="expira" ngbDatepicker  #expiraDp="ngbDatepicker" [(ngModel)]="campanha.expira"
+                        <input id="field_expira" type="text" class="contact_input form-control" name="expira" ngbDatepicker  #expiraDp="ngbDatepicker" [(ngModel)]="campanha.expira"
                         required/>
                         <span class="input-group-append">
                             <button type="button" class="btn btn-secondary" (click)="expiraDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.campanha.numeroSelos" for="field_numeroSelos">Numero Selos</label>
-                    <input type="number" class="form-control" name="numeroSelos" id="field_numeroSelos"
+                    <input type="number" class="contact_input form-control" name="numeroSelos" id="field_numeroSelos"
                         [(ngModel)]="campanha.numeroSelos" required min="1" jhiMin="1"/>
                     <div [hidden]="!(editForm.controls.numeroSelos?.dirty && editForm.controls.numeroSelos?.invalid)">
                         <small class="form-text text-danger"
@@ -121,7 +121,7 @@
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.campanha.empresa" for="field_empresa">Empresa</label>
-                    <select class="form-control" id="field_empresa" name="empresa" [(ngModel)]="campanha.empresa"  required>
+                    <select class="contact_input form-control" id="field_empresa" name="empresa" [(ngModel)]="campanha.empresa"  required>
                         <option *ngIf="!editForm.value.empresa" [ngValue]="null" selected></option>
                         <option [ngValue]="empresaOption.id === campanha.empresa?.id ? campanha.empresa : empresaOption" *ngFor="let empresaOption of empresas; trackBy: trackEmpresaById">{{empresaOption.nome}}</option>
                     </select>
@@ -134,10 +134,10 @@
                 </div>
             </div>
             <div>
-                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                <button type="button" id="cancel-save" class="search_form_button btn btn-secondary"  (click)="previousState()">
                     <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
                 </button>
-                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="search_form_button btn btn-primary">
                     <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
                 </button>
             </div>
