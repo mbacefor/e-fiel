@@ -6,12 +6,12 @@
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!categoria.id">
                     <label for="id" jhiTranslate="global.field.id">ID</label>
-                    <input type="text" class="form-control" id="id" name="id"
+                    <input type="text" class="contact_input form-control" id="id" name="id"
                         [(ngModel)]="categoria.id" readonly />
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.categoria.descricao" for="field_descricao">Descricao</label>
-                    <input type="text" class="form-control" name="descricao" id="field_descricao"
+                    <input type="text" class="contact_input form-control" name="descricao" id="field_descricao"
                         [(ngModel)]="categoria.descricao" minlength="10" maxlength="200"/>
                     <div [hidden]="!(editForm.controls.descricao?.dirty && editForm.controls.descricao?.invalid)">
                         <small class="form-text text-danger"
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="efielApp.categoria.ativo" for="field_ativo">Ativo</label>
+                    <label class="contact_input form-control-label" jhiTranslate="efielApp.categoria.ativo" for="field_ativo">Ativo</label>
                     <input type="checkbox" class="form-control" name="ativo" id="field_ativo"
                         [(ngModel)]="categoria.ativo" />
                     <div [hidden]="!(editForm.controls.ativo?.dirty && editForm.controls.ativo?.invalid)">
@@ -38,16 +38,16 @@
 
                 <div class="form-group">
                     <label jhiTranslate="efielApp.categoria.empresas" for="field_empresas">Empresas</label>
-                    <select class="form-control" id="field_empresas" multiple name="empresas" [(ngModel)]="categoria.empresas">
+                    <select class="contact_input form-control" id="field_empresas" multiple name="empresas" [(ngModel)]="categoria.empresas">
                         <option [ngValue]="getSelected(categoria.empresas, empresaOption)" *ngFor="let empresaOption of empresas; trackBy: trackEmpresaById">{{empresaOption.nome}}</option>
                     </select>
                 </div>
             </div>
             <div>
-                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                <button type="button" id="cancel-save" class="search_form_button btn btn-secondary"  (click)="previousState()">
                     <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
                 </button>
-                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="search_form_button btn btn-primary">
                     <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
                 </button>
             </div>
