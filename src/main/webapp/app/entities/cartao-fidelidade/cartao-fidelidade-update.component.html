@@ -6,13 +6,13 @@
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!cartaoFidelidade.id">
                     <label for="id" jhiTranslate="global.field.id">ID</label>
-                    <input type="text" class="form-control" id="id" name="id"
+                    <input type="text" class="contact_input form-control" id="id" name="id"
                         [(ngModel)]="cartaoFidelidade.id" readonly />
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.cartaoFidelidade.dataCriacao" for="field_dataCriacao">Data Criacao</label>
                     <div class="input-group">
-                        <input id="field_dataCriacao" type="text" class="form-control" name="dataCriacao" ngbDatepicker  #dataCriacaoDp="ngbDatepicker" [(ngModel)]="cartaoFidelidade.dataCriacao"
+                        <input id="field_dataCriacao" type="text" class="contact_input form-control" name="dataCriacao" ngbDatepicker  #dataCriacaoDp="ngbDatepicker" [(ngModel)]="cartaoFidelidade.dataCriacao"
                         required/>
                         <span class="input-group-append">
                             <button type="button" class="btn btn-secondary" (click)="dataCriacaoDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.cartaoFidelidade.dataPremio" for="field_dataPremio">Data Premio</label>
                     <div class="input-group">
-                        <input id="field_dataPremio" type="text" class="form-control" name="dataPremio" ngbDatepicker  #dataPremioDp="ngbDatepicker" [(ngModel)]="cartaoFidelidade.dataPremio"
+                        <input id="field_dataPremio" type="text" class="contact_input form-control" name="dataPremio" ngbDatepicker  #dataPremioDp="ngbDatepicker" [(ngModel)]="cartaoFidelidade.dataPremio"
                         />
                         <span class="input-group-append">
                             <button type="button" class="btn btn-secondary" (click)="dataPremioDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
@@ -38,24 +38,24 @@
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.cartaoFidelidade.campanha" for="field_campanha">Campanha</label>
-                    <select class="form-control" id="field_campanha" name="campanha" [(ngModel)]="cartaoFidelidade.campanha" >
+                    <select class="contact_input form-control" id="field_campanha" name="campanha" [(ngModel)]="cartaoFidelidade.campanha" >
                         <option [ngValue]="null"></option>
                         <option [ngValue]="campanhaOption.id === cartaoFidelidade.campanha?.id ? cartaoFidelidade.campanha : campanhaOption" *ngFor="let campanhaOption of campanhas; trackBy: trackCampanhaById">{{campanhaOption.id}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="efielApp.cartaoFidelidade.dono" for="field_dono">Dono</label>
-                    <select class="form-control" id="field_dono" name="dono" [(ngModel)]="cartaoFidelidade.dono" >
+                    <select class="contact_input form-control" id="field_dono" name="dono" [(ngModel)]="cartaoFidelidade.dono" >
                         <option [ngValue]="null"></option>
                         <option [ngValue]="userOption.id === cartaoFidelidade.dono?.id ? cartaoFidelidade.dono : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
                     </select>
                 </div>
             </div>
             <div>
-                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                <button type="button" id="cancel-save" class="search_form_button btn btn-secondary"  (click)="previousState()">
                     <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
                 </button>
-                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="search_form_button btn btn-primary">
                     <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
                 </button>
             </div>
